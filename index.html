@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Draw Clone</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Removed TensorFlow.js since we're using a simulated approach -->
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Quick Draw Clone</h1>
+            <p id="prompt">Draw: <span id="drawing-prompt">Loading...</span></p>
+            <p id="timer">Time: <span id="time-left">20</span>s</p>
+        </header>
+
+        <main>
+            <div class="canvas-container">
+                <canvas id="drawing-canvas" width="400" height="400"></canvas>
+                <div class="canvas-controls">
+                    <button id="clear-btn">Clear Canvas</button>
+                    <button id="check-btn" onclick="handleCheckDrawing()">Check Drawing</button>
+                </div>
+            </div>
+
+            <div class="prediction-container">
+                <h2>Results:</h2>
+                <div id="predictions">
+                    <div class="prediction-item">
+                        <span class="prediction-label">Draw your picture! Use the Check Drawing button when ready or wait for the timer.</span>
+                        <div class="prediction-bar">
+                            <div class="prediction-fill" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div id="game-over" class="hidden">
+            <div class="game-over-content">
+                <h2>Game Over!</h2>
+                <p>Your score: <span id="final-score">0</span></p>
+                <button id="play-again-btn">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
